@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Auto Request</title>
+  </head>
+  <body>
+    <h3>Sending request...</h3>
+    <script>
+      fetch("http://localhost:3001/generate_ppt", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          project_id: "2236447000001603005",
+          tasklist_id: "2236447000003239046",
+          generate_type: "posts",
+        }),
+      })
+        .then((response) => {
+          console.log(response);
+          return response;
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          document.body.innerHTML +=
+            "<p>❌ Request failed: " + error.message + "</p>";
+        });
+    </script>
+  </body>
+</html>

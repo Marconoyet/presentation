@@ -1,0 +1,30 @@
+{
+  "defaults": {
+    "project": 1,
+    "env": 1
+  },
+  "actives": {
+    "project": 1,
+    "env": 1
+  },
+  "projects": [
+    {
+      "idx": 1,
+      "id": "31948000000015001",
+      "name": "Presentation",
+      "domain": {
+        "id": "10100936465",
+        "name": "presentation-887115102.development"
+      },
+      "timezone": "Africa/Cairo",
+      "env": [
+        {
+          "idx": 1,
+          "id": "887115102",
+          "name": "Development",
+          "type": 3
+        }
+      ]
+    }
+  ]
+}

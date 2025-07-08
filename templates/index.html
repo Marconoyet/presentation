@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Auto Request</title>
+  </head>
+  <body>
+    <h3>Sending request...</h3>
+    <script>
+      const payload = {
+        body: {
+          type: "posts",
+          data: {
+            projectId: "123456",
+            tasklistId: "78910",
+          },
+        },
+      };
+
+      fetch(
+        "https://www.zohoapis.com/crm/v7/functions/projectpresentation/actions/execute?auth_type=apikey&zapikey=1003.3c9532ce6454d6df1b898e83bfff40ea.bed6415c9b3cf64cc4532c1755fee909",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("✅ Response from Zoho Function:", data);
+          document.body.innerHTML +=
+            "<p>✅ Request sent and response received.</p>";
+        })
+        .catch((error) => {
+          console.error("❌ Error:", error);
+          document.body.innerHTML +=
+            "<p>❌ Request failed: " + error.message + "</p>";
+        });
+    </script>
+  </body>
+</html>
